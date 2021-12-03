@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="10" prefHeight="512.0" prefWidth="794.0" vgap="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+   <children>
+      <AnchorPane prefHeight="512.0" prefWidth="804.0">
+         <children>
+            <TabPane layoutX="1.0" layoutY="1.0" prefHeight="511.0" prefWidth="794.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="1">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="481.0" prefWidth="794.0">
+                           <children>
+                              <TableView fx:id="clientTable" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="379.0">
+                                <columns>
+                                  <TableColumn fx:id="idClient" prefWidth="22.0" text="id" />
+                                  <TableColumn fx:id="name" prefWidth="86.0" text="Имя" />
+                                    <TableColumn fx:id="lastName" prefWidth="123.0" text="Фамилия" />
+                                    <TableColumn fx:id="phone" prefWidth="139.0" text="Номер" />
+                                </columns>
+                              </TableView>
+                              <Button layoutX="133.0" layoutY="222.0" mnemonicParsing="false" onAction="#addClient" text="Добавить клиента" />
+                              <Button layoutX="14.0" layoutY="222.0" mnemonicParsing="false" onAction="#deleteClient" text="Удалить клиента" />
+                              <Button layoutX="133.0" layoutY="256.0" mnemonicParsing="false" onAction="#updateClient" text="Изменить данные клиента" />
+                              <Button layoutX="551.0" layoutY="256.0" mnemonicParsing="false" onAction="#updateSeller" text="Изменить данные продавца" />
+                              <Button layoutX="552.0" layoutY="222.0" mnemonicParsing="false" onAction="#addSeller" text="Добавить нового продавца" />
+                              <Button layoutX="428.0" layoutY="222.0" mnemonicParsing="false" onAction="#deleteSeller" text="Удалить продавца" />
+                              <TableView fx:id="sellerTable" layoutX="407.0" layoutY="14.0" prefHeight="200.0" prefWidth="385.0">
+                                 <columns>
+                                    <TableColumn fx:id="idSeller" prefWidth="30.0" text="id" />
+                                    <TableColumn fx:id="name2" prefWidth="99.0" text="Имя" />
+                                    <TableColumn fx:id="lastName2" prefWidth="125.0" text="Фамилия" />
+                                    <TableColumn fx:id="phone2" prefWidth="119.0" text="Номер" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="2">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="contractTable1" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="439.0">
+                                 <columns>
+                                    <TableColumn fx:id="idContract1" prefWidth="30.0" text="id" />
+                                    <TableColumn fx:id="clientFam" prefWidth="105.0" text="Клиент" />
+                                    <TableColumn fx:id="sellerFam" prefWidth="116.0" text="Продавец" />
+                                    <TableColumn fx:id="date" prefWidth="82.0" text="Дата" />
+                                    <TableColumn fx:id="amount" prefWidth="96.0" text="Оплачено" />
+                                 </columns>
+                              </TableView>
+                              <Button layoutX="486.0" layoutY="14.0" mnemonicParsing="false" onAction="#addContract" text="Новый договор" />
+                              <TableView fx:id="contractTable2" layoutX="14.0" layoutY="241.0" prefHeight="219.0" prefWidth="275.0">
+                                 <columns>
+                                    <TableColumn fx:id="clientName" prefWidth="133.0" text="Клиент" />
+                                    <TableColumn fx:id="amountAll" prefWidth="131.0" text="Оплачено всего" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </children>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+</GridPane>
